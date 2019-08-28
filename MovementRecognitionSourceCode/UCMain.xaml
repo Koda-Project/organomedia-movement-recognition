@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="MovementRecognition.UCMain"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:StyleLibrary="ctl-namespace:OrganomediaLibrary.Style;assembly=OrganomediaLibrary"
+             PreviewMouseDown="UserControl_PreviewMouseDown" MouseDown="UserControl_PreviewMouseDown"
+             Padding="20"
+             mc:Ignorable="d" d:DesignHeight="500" d:DesignWidth="1000" Background="Transparent">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/OrganomediaLibrary;component/Style/ScrollViewStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MovementRecognition;component/Style/CommonStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Border Name="borNavigation" BorderThickness="2" BorderBrush="#006699" Grid.Row="0" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <Grid Name="grdNavigation" Grid.Row="0" Background="#006666" Margin="0">
+                <Frame x:Name="navigationFrame" HorizontalAlignment="Left" Width="auto"  VerticalAlignment="Center" NavigationUIVisibility="Hidden" Background="Transparent" />
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1" Margin="0" Visibility="Collapsed" >
+            <ScrollViewer Name="ScrollMain" Style="{StaticResource FavsScrollViewer}"
+                              VerticalScrollBarVisibility="Visible"  HorizontalScrollBarVisibility="Visible" CanContentScroll="True">
+                <UniformGrid Name="UGMain" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Visible" 
+                         ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+
+            </ScrollViewer>
+        </Grid>
+        <Frame Name="MainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Visibility="Collapsed"
+                NavigationUIVisibility="Hidden"/>
+    </Grid>
+</UserControl>

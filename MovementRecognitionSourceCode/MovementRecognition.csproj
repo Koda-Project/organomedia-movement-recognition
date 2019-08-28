@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{316B71F4-9D7F-40A1-BAC7-2A0F671E21CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MovementRecognition</RootNamespace>
+    <AssemblyName>MovementRecognition</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Program Files %28x86%29\ORGANOMEDIA\Plugins\Games\משחקים במערכת\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.SKYPE4COMLib">
+      <HintPath>..\..\Dlls\Interop.SKYPE4COMLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Kinect, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="OrganomediaComponentAPI">
+      <HintPath>..\..\Dlls\OrganomediaComponentAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="OrganomediaLibrary">
+      <HintPath>..\..\Dlls\OrganomediaLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="Sanford.Collections">
+      <HintPath>..\..\Dlls\Sanford.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Sanford.Multimedia">
+      <HintPath>..\..\Dlls\Sanford.Multimedia.dll</HintPath>
+    </Reference>
+    <Reference Include="Sanford.Multimedia.Midi">
+      <HintPath>..\..\Dlls\Sanford.Multimedia.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="Sanford.Multimedia.Timers">
+      <HintPath>..\..\Dlls\Sanford.Multimedia.Timers.dll</HintPath>
+    </Reference>
+    <Reference Include="Sanford.Threading">
+      <HintPath>..\..\Dlls\Sanford.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsGames.cs" />
+    <Compile Include="FlowDirectionConverter.cs" />
+    <Compile Include="KinectHandTracker.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CommonStatic.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Res.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Res.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Res.he.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Res.he.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TextBoxHelper.cs" />
+    <Compile Include="UCGameScreen.xaml.cs">
+      <DependentUpon>UCGameScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCMain.xaml.cs">
+      <DependentUpon>UCMain.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Style\CommonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\MenuStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\MenuStyleDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\ScrollViewStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UCGameScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background\login_but.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Background\background.png" />
+    <Resource Include="Images\Background\login_but_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background\desktop_bg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background\login_but_cyan_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background\volume_control_slider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Res.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Res.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Res.he.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Res.he.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icon\next.png" />
+    <Resource Include="Images\Icon\previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\game-sound-correct.wav" />
+    <Resource Include="Images\pose0.png" />
+    <Resource Include="Images\pose1.png" />
+    <Resource Include="Images\pose2.png" />
+    <Resource Include="Images\pose3.png" />
+    <Resource Include="Images\down.png" />
+    <Content Include="Images\Icon\appbar.navigate.next.png" />
+    <Content Include="Images\Icon\appbar.navigate.previous.png" />
+    <Resource Include="Images\up.png" />
+    <Resource Include="Images\LeftMenu\1.png" />
+    <Resource Include="Images\LeftMenu\2.png" />
+    <Resource Include="Images\LeftMenu\3.png" />
+    <Resource Include="Images\LeftMenu\4.png" />
+    <Resource Include="Images\LeftMenu\5.png" />
+    <Resource Include="Images\LeftMenu\6.png" />
+    <Resource Include="Images\LeftMenu\7.png" />
+    <Resource Include="Images\LeftMenu\8.png" />
+    <Resource Include="Images\LeftMenu\left-panel-bottom.png" />
+    <Resource Include="Images\LeftMenu\left-panel-middle.png" />
+    <Resource Include="Images\LeftMenu\left-panel-top.png" />
+    <Resource Include="Images\LeftMenu\leftmenu_background.png" />
+    <Resource Include="Images\LeftMenu\light-1.png" />
+    <Resource Include="Images\LeftMenu\light-2.png" />
+    <Resource Include="Images\LeftMenu\light-3.png" />
+    <Resource Include="Images\LeftMenu\light-4.png" />
+    <Resource Include="Images\LeftMenu\light-5.png" />
+    <Resource Include="Images\LeftMenu\light-6.png" />
+    <Resource Include="Images\LeftMenu\light-7.png" />
+    <Resource Include="Images\LeftMenu\light-8.png" />
+    <Resource Include="Images\LeftMenu\repeat_back.png" />
+    <Resource Include="Images\LeftMenu\repeat_back1.png" />
+    <Resource Include="Images\LeftMenu\selected-box-bottom.png" />
+    <Resource Include="Images\LeftMenu\selected-box-middle.png" />
+    <Resource Include="Images\LeftMenu\selected-box-top.png" />
+    <Resource Include="Images\LeftMenu\selected-box.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
